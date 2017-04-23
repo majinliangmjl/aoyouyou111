@@ -1,0 +1,29 @@
+<div ng-controller="zhuce" class="yhs_zhuce">
+	<div class="zhuti1">
+		<div class="den">
+			<div class="yh1">
+				用户名(允许输入英文字母和数字)<br />
+				<input type="text" ng-model="user" />
+				<br /> 昵称(允许输入中文、英文字母和数字)
+				<br />
+				<input type="text" ng-model="nc" />
+				<br /> 密码(允许输入数字、英文字母)
+				<br />
+				<input type="password" ng-model="pwd" />
+				<br /> 手机号
+				<br />
+				<input type="tel" ng-model="phone" />
+				
+				<div class="xin">
+					<div class="deng" ng-click="y_zhuce()">
+						<a href="">注册</a>
+					</div>
+					<div class="zi">
+						<a ui-sref="login">点击从这里登录></a>
+					</div>
+				</div>
+			</div>
+			<div ui-view></div>
+		</div>
+	</div>
+</div>

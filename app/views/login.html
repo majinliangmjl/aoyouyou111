@@ -1,0 +1,22 @@
+<div ng-controller="yhs_login" class="yhs_login">
+	<div class="yhs_denglu">
+		<div class="yh">
+				用户名：<br />
+				<input type="text" ng-model="username" />
+				<br /> 密码：
+				<br />
+				<input type="password" ng-model="password" />
+
+				<div class="xin">
+					<div class="deng" ng-click="denglu()">
+						<a href="">登录</a>
+					</div>
+
+					<div class="zi">
+						<a href="" ui-sref="zhuce">新用户注册</a>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div ui-view></div>
+</div>
