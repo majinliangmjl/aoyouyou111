@@ -1,0 +1,140 @@
+<div>
+	<div class="ql_head">
+		<div class="ql_head_left1 glyphicon glyphicon-home"></div>
+		<div class="ql_head_left">
+			新闻系统
+		</div>
+		<div class="ql_head_right">
+			<ul>
+				<li>退出登录</li>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="ql_left">
+		<div class="glyphicon glyphicon-remove ql_zc"></div>
+		<div class="list">
+			<ul class="yiji">
+
+				<li>
+					<a href="#" class="inactive" >css</a>
+					<ul style="display: none">
+						<li>
+							<div class="glyphicon glyphicon-share-alt tb"></div>
+							<a href="#" class=" active" ui-sref='index.cont1'>添加</a>
+						</li>
+						<li class="last">
+							<div class="glyphicon glyphicon-cog tb"></div>
+							<a href="#">编辑</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="inactive">javascript</a>
+					<ul style="display: none">
+						<li>
+							<div class="glyphicon glyphicon-share-alt tb"></div>
+							<a href="#" class=" active">添加</a>
+						</li>
+						<li class="last">
+							<div class="glyphicon glyphicon-cog tb"></div>
+							<a href="#" class=" active">编辑</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="inactive">jquery</a>
+					<ul style="display: none">
+						<li>
+							<div class="glyphicon glyphicon-share-alt tb"></div>
+							<a href="#" class=" active">添加</a>
+						</li>
+						<li class="last">
+							<div class="glyphicon glyphicon-cog tb"></div>
+							<a href="#" class=" active">编辑</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="inactive">angular</a>
+					<ul style="display: none">
+						<li>
+							<div class="glyphicon glyphicon-share-alt tb"></div>
+							<a href="#" class=" active">添加</a>
+						</li>
+						<li class="last">
+							<div class="glyphicon glyphicon-cog tb"></div>
+							<a href="#" class=" active">编辑</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="ql_left_">></div>
+	<div class="ql_right" ng-controller="shijian">
+		<!--<div class="dowebok">
+			<div class="hours"></div>
+			<div class="minutes"></div>
+			<div class="seconds"></div>
+		</div>-->
+		<div class="ql_sj">
+			<p ng-bind="time | date:'y年MM月dd日'" ng-model="sj"></p>
+		</div>
+		<div class="ql_right_w"></div>
+		<div class="ql_right_time"></div>
+		<div ui-view></div>
+	</div>
+</div>
+<script>
+    $(function(){
+    	$('.dowebok').flipTimer({
+			seconds: true
+		});
+    })
+	$(document).ready(function() {
+		$('.inactive').click(function() {
+			if($(this).siblings('ul').css('display') == 'none') {
+				
+				$(this).addClass('inactives');
+				$(this).siblings('ul').slideDown(800);
+				
+			} else {
+				//控制自身变成+号
+				$(this).removeClass('inactives');
+				//控制自身菜单下子菜单隐藏
+				$(this).siblings('ul').slideUp(800);
+				
+				
+			}
+		})
+	});
+	//	$('#li_one').click(function(){
+	//		 $('.ql_cs').slideToggle(800)
+	//	})
+//	$('.ql_zc').click(function() {
+//		$('.ql_left').css({
+//			'transform': 'translateX(-200px)'
+//		})
+//		$('.ql_left_').show()
+//	})
+//	$('.ql_left_').click(function() {
+//		$('.ql_left').css({
+//			'transform': 'translateX(0px)'
+//		})
+//		$('.ql_left_').hide()
+//	})
+	
+		$('.ql_zc').click(function() {
+				$('.ql_left').css({'transform':'translateX(-200px)'})
+				$('.ql_right').css({'transform':'translateX(0px)',"width":"100%"})
+				$('.ql_left_').css({'transform':'translateX(-200px)',"opacity":'1'})
+		})
+		$('.ql_left_').click(function(){
+			$('.ql_left').css({'transform':'translateX(0px)'})
+			$('.ql_right').css({'transform':'translateX(200px)',"width":"90%"})
+			$('.ql_left_').css({'transform':'translateX(0px)',"opacity":'0'})
+		})
+		
+		
+</script>
