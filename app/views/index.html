@@ -44,32 +44,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
-					<a href="javascript:void(0)" class="inactive">回收站</a>
-					<ul style="display: none">
-						<li>
-							<div class="glyphicon glyphicon-share-alt tb"></div>
-							<a href="javascript:void(0)" class=" active">添加</a>
-						</li>
-						<li class="last">
-							<div class="glyphicon glyphicon-cog tb"></div>
-							<a href="javascript:void(0)" class=" active">编辑</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:void(0)" class="inactive">angular</a>
-					<ul style="display: none">
-						<li>
-							<div class="glyphicon glyphicon-share-alt tb"></div>
-							<a href="javascript:void(0)" class=" active">添加</a>
-						</li>
-						<li class="last">
-							<div class="glyphicon glyphicon-cog tb"></div>
-							<a href="javascript:void(0)" class=" active">编辑</a>
-						</li>
-					</ul>
-				</li>
+				
 			</ul>
 		</div>
 	</div>
@@ -130,11 +105,13 @@
 		$('.ql_zc').click(function() {
 				$('.ql_left').css({'transform':'translateX(-200px)'})
 				$('.ql_right').css({'transform':'translateX(0px)',"width":"100%"})
+				$('.cont1').css({"width":"100%"})
 				$('.ql_left_').css({'transform':'translateX(-200px)',"opacity":'1'})
 		})
 		$('.ql_left_').click(function(){
 			$('.ql_left').css({'transform':'translateX(0px)'})
 			$('.ql_right').css({'transform':'translateX(200px)',"width":"90%"})
+			$('.cont1').css({"width":"95%"})
 			$('.ql_left_').css({'transform':'translateX(0px)',"opacity":'0'})
 		})
 		
