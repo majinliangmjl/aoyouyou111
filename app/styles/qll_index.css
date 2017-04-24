@@ -115,17 +115,23 @@ body{
 	text-align: center;
 	line-height:35px ;
 	z-index: 200;
-	margin-left: 10px;
+	margin-left: 20px;
 	margin-right: 10px;
 }
 .list{width: 200px;margin:50px auto 0 auto;}
 .list ul li{background-color:#37424F; border-bottom:solid 0px #316a91;}
-.list ul li a{padding-left: 10px;color: #fff; font-size:12px; display: block;height:36px;line-height: 36px;position: relative;
+.list ul li a{padding-left: 15px;color: #fff; font-size:12px; display: block;height:36px;line-height: 36px;position: relative;
+	transition: 0.6s;
+}
+.list ul li p{padding-left: 15px;color: #fff;cursor: pointer; margin-bottom: 0; font-size:12px; display: block;height:36px;line-height: 36px;position: relative;
 }
 .list ul li a:hover{
 	 background:url(../images/off.png) no-repeat 160px center #42515F;
 }
-.list ul li a:link{ color: #333;text-decoration: none;}
+.list ul li p:hover{
+	 background: #42515F;
+}
+.list ul li a:link{ color: #fff;text-decoration: none;}
 .list ul li .inactive{ background:url(../images/off.png) no-repeat 160px center;}
 .list ul li .inactives{background:url(../images/on.png) no-repeat 160px center;} 
 .list ul li ul{display: none;}

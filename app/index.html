@@ -13,8 +13,12 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+
     <link rel="stylesheet" href="styles/qll_index.css" />
     <link rel="stylesheet" href="styles/fliptimer.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles/login.css"/>
+
     <!-- endbuild -->
   </head>
   <body ng-app="my">
@@ -23,8 +27,6 @@
     <![endif]-->
 		<div ui-view></div>
     <!-- Add your site or application content here -->
-   
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -42,14 +44,21 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+
         <script src="scripts/controllers/qll.js"></script>
         <script src="scripts/controllers/jquery.fliptimer.js"></script>
+
+        <script src="scripts/controllers/zhuce.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+
         <!-- endbuild -->
+ 
+
 </body>
 </html>
