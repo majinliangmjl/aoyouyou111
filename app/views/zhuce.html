@@ -1,9 +1,27 @@
 <div ng-controller="zhuce" class="yhs_zhuce">
+	<div id="bodyBox">
+
+		<div id="bodyPage">
+			<img src="../images/bj.jpg" class="bg"/>
+	   	  	<img src="../images/1.jpg" class="bg"/>
+	    </div>
+	    
+	    
+	</div>
+	
+	<div id="popup">
+			<div class="title">
+				<p data-title="Popup Text">提示信息</p>
+				<span>x</span>
+			</div>
+			<div class="cont2">登录成功</div>
+		</div>
+		<div id="mask_shadow"></div>
 	<div class="zhuti1">
 		<div class="den">
 			<div class="yh1">
 				用户名(允许输入英文字母和数字)<br />
-				<input type="text" ng-model="user" />
+				<input type="text" ng-model="user" class="zcname" />
 				<br /> 昵称(允许输入中文、英文字母和数字)
 				<br />
 				<input type="text" ng-model="nc" />
@@ -26,4 +44,19 @@
 			<div ui-view></div>
 		</div>
 	</div>
+	
 </div>
+<script>
+	$(document).ready(function(e) {
+    
+   $("#bodyPage").fullImages({
+	   ImgWidth: 1920,
+	   ImgHeight: 980,
+	   autoplay :  3000,
+	   fadeTime : 1500
+   });
+	
+
+});
+
+</script>

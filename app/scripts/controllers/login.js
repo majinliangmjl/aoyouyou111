@@ -2,6 +2,7 @@ angular.module('my')
 	.controller('yhs_login', ['$scope', '$http', '$state', function($scope, $http, $state) {
 		$scope.username = "";
 		$scope.password = "";
+		$scope.username = localStorage.getItem('yhm')
 		$scope.denglu = function() {
 			if($scope.username == "" || $scope.password == "") {
 //				alert("用户名和密码不能为空")

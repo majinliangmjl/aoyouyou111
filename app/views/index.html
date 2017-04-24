@@ -6,7 +6,7 @@
 		</div>
 		<div class="ql_head_right">
 			<ul>
-				<li>退出登录</li>
+				<li ui-sref='login'>退出登录</li>
 				
 			</ul>
 		</div>
@@ -106,12 +106,14 @@
 				$('.ql_left').css({'transform':'translateX(-200px)'})
 				$('.ql_right').css({'transform':'translateX(0px)',"width":"100%"})
 				$('.cont1').css({"width":"100%"})
+				$('.xwfl').css({"width":"290px","height":"600px"})
 				$('.ql_left_').css({'transform':'translateX(-200px)',"opacity":'1'})
 		})
 		$('.ql_left_').click(function(){
 			$('.ql_left').css({'transform':'translateX(0px)'})
 			$('.ql_right').css({'transform':'translateX(200px)',"width":"90%"})
 			$('.cont1').css({"width":"95%"})
+			$('.xwfl').css({"width":"530px"})
 			$('.ql_left_').css({'transform':'translateX(0px)',"opacity":'0'})
 		})
 		

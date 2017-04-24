@@ -8,7 +8,16 @@ angular.module("my")
 	
 	$scope.y_zhuce = function(){
 		if($scope.user==""||$scope.tel==""||$scope.pwd==""||$scope.nc==""){
-			alert("亲！输入不能为空哦")
+//			alert("亲！输入不能为空哦")
+			$('#popup').css({"opacity":"1","top":"40px"})
+						 $(".cont2").html('亲！输入不能为空哦')
+						$('#mask_shadow').css({"display":"block"})
+						setTimeout(function () {
+						    $("#popup").css({"opacity":"0","top":"20px"})
+						    $(".cont2").html('亲！输入不能为空哦')
+						    $('#mask_shadow').css({"display":"none"})
+						    
+						},2000);
 		}else{
 			//console.log(username)
 			$http({
@@ -25,11 +34,39 @@ angular.module("my")
 			}).then(function(reqs){
 				
 				if(reqs.data.flag==1){
-					alert("注册成功，确定跳转到登陆页面")
+					//alert("注册成功，确定跳转到登陆页面")
+					localStorage.setItem('yhm',$('.zcname').val())
+					$('#popup').css({"opacity":"1","top":"40px"})
+						 $(".cont2").html('注册成功，确定跳转到登陆页面')
+						$('#mask_shadow').css({"display":"block"})
+						setTimeout(function () {
+						    $("#popup").css({"opacity":"0","top":"20px"})
+						    $(".cont2").html('注册成功，确定跳转到登陆页面')
+						    $('#mask_shadow').css({"display":"none"})
+						    $state.go('login')
+						},2000);
 				}else if(reqs.data.flag==2){
-					alert("此用户名以重复")
+					//alert("此用户名以重复")
+					$('#popup').css({"opacity":"1","top":"40px"})
+						 $(".cont2").html('此用户名以重复')
+						$('#mask_shadow').css({"display":"block"})
+						setTimeout(function () {
+						    $("#popup").css({"opacity":"0","top":"20px"})
+						    $(".cont2").html('此用户名以重复')
+						    $('#mask_shadow').css({"display":"none"})
+						    
+						},2000);
 				}else if(reqs.data.flag==3){
-					alert("注册失败")
+					//alert("注册失败")
+					$('#popup').css({"opacity":"1","top":"40px"})
+						 $(".cont2").html('注册失败')
+						$('#mask_shadow').css({"display":"block"})
+						setTimeout(function () {
+						    $("#popup").css({"opacity":"0","top":"20px"})
+						    $(".cont2").html('注册失败')
+						    $('#mask_shadow').css({"display":"none"})
+						    
+						},2000);
 				}
 			},function(){
 				alert("数据请求失败")
