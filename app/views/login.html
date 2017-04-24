@@ -8,7 +8,7 @@
 				<input type="password" ng-model="password" />
 
 				<div class="xin">
-					<div class="deng" ng-click="denglu()">
+					<div class="deng" ng-click="denglu()"  id="btn1">
 						<a href="">登录</a>
 					</div>
 
@@ -18,5 +18,40 @@
 				</div>
 			</div>
 	</div>
+		
+	<div id="bodyBox">
+
+		<div id="bodyPage">
+			<img src="../images/bj.jpg" class="bg"/>
+	   	  	<img src="../images/1.jpg" class="bg"/>
+	    </div>
+	    
+	    
+	</div>
+	
+	<div id="popup">
+			<div class="title">
+				<p data-title="Popup Text">提示信息</p>
+				<span>x</span>
+			</div>
+			<div class="cont2">登录成功</div>
+		</div>
+		<div id="mask_shadow"></div>
+
+
 	<div ui-view></div>
 </div>
+<script>
+	$(document).ready(function(e) {
+    
+   $("#bodyPage").fullImages({
+	   ImgWidth: 1920,
+	   ImgHeight: 980,
+	   autoplay :  3000,
+	   fadeTime : 1500
+   });
+	
+
+});
+
+</script>

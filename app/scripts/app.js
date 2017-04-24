@@ -29,6 +29,18 @@ angular.module('my', ['ui.router'])
 			url: "/index.cont1",
 			templateUrl: "views/cont1.html"
 	})
+	.state('index.cont2', {
+			url: "/index.cont2",
+			templateUrl: "views/cont2.html"
+	})
+	.state('index.y_glxw', {
+			url: "/index.y_glxw",
+			templateUrl: "views/y_glxw.html"
+	})
+	.state('index.y_xwzx', {
+			url: "/index.y_xwzx",
+			templateUrl: "views/y_xwzx.html"
+	})
 	$urlRouterProvider.otherwise("/login")
 
 }])

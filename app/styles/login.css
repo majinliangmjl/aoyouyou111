@@ -1,12 +1,18 @@
 .yhs_denglu{
-	margin: 0 auto;
-	width: 500px;
-	height: 300px;
-	border: 2px solid #E5E5E5;
-	border-radius: 10px;
-	margin-top: 180px;
-	background: #FFFFFF;
-	
+	margin: auto;
+    width: 350px;
+    height: 290px;
+    overflow: hidden;
+    
+    border-radius: 10px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 555;
+	box-shadow: 0 1px 20px #333;
 }
 
 .yhs_login{
@@ -14,10 +20,10 @@
 	height: 100%;
 }
 .yh{
-	width: 350px;
+	width: 285px;
 	margin: 0 auto;
 	height: 200px;
-	font-size: 16px;
+	font-size: 14px;
 	color:#333333;
 	margin-top: 30px;
 }
@@ -28,11 +34,14 @@
 	height: 29px;
 	border: 1px solid #ccc;
 	margin-top: 14px;
+	text-indent: 10px;
+	outline: none;
 }
 .zhuti1{
 	
 	height: 360px;
 	margin: 0 auto;
+
 }
 .loge{
 	
@@ -43,13 +52,18 @@
 }
 
 .den{
-	margin: 0 auto;
-	width: 450px;
-	height: 500px;
-	border: 2px solid #E5E5E5;
-	border-radius: 10px;
-	margin-top: 100px;
-	background: #FFFFFF;
+	margin: auto;
+    width: 400px;
+    height: 450px;
+    overflow: hidden;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 
@@ -61,12 +75,14 @@
 
 .deng{
 	float: left;
-	width: 59px;
+	width: 75px;
 	height: 34px;
 	text-align: center;
 	font-size: 12px;
 	background: #5497ff;
-	border-radius: 16%;
+	border-radius: 5px;
+	margin-top: 20px;
+	cursor: pointer !important;
 }
 
 .deng a{
@@ -80,6 +96,8 @@
 	float: right;
 	height: 35px;
 	line-height: 38px;
+	margin-top: 20px;
+	margin-right: 15px;
 }
 
 .zi a{
@@ -90,10 +108,10 @@
 
 
 .yh1{
-	width: 350px;
+	width: 335px;
 	margin: 0 auto;
 	height: 400px;
-	font-size: 16px;
+	font-size: 14px;
 	color:#333333;
 	margin-top: 30px;
 }
@@ -105,3 +123,108 @@
 	border: 1px solid #ccc;
 	margin-top: 14px;
 }
+
+
+
+#bodyPage {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+img.bg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	display: none;
+}
+
+.cont {
+	width: 400px;
+	height: 300px;
+	background: #ccc;
+	z-index: 999;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+
+#mask_shadow {
+				display: none;
+			
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 555;
+				background-color: rgba(0, 0, 0, .6);
+			}
+			
+			#popup {
+				opacity: 0;
+				position: absolute;
+				top: -10px;left: 0;right: 0;
+				margin: auto;
+				width: 400px;
+				z-index: 556;
+				height: 85px;
+				transition: 0.5s ease;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+			}
+			
+			#popup .title {
+				position: relative;
+				width: 100%;
+				height: 35px;
+				background-color: #5bc0de;
+				cursor: move;
+			}
+			
+			#popup .title p {
+				padding-left: 14px;
+				line-height: 38px;
+				color: #fff;
+				font-size: 12px;
+			}
+			
+			#popup .title span {
+				position: absolute;
+				top:7px;
+				right: 10px;
+				width: 20px;
+				height: 20px;
+				color: #000;
+				opacity: .2;
+				font-size: 21px;
+				line-height: 15px;
+				cursor: pointer;
+				text-align: center;
+				border: 1px solid #333;
+			}
+			
+			#popup .title span:hover {
+				opacity: .8;
+			}
+			
+			#popup .cont2 {
+				width: 100%;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				background-color: #EDEDED;
+			}
+			
+			#btn1 {
+				margin: 30px;
+			}
