@@ -14,7 +14,7 @@ angular.module('my')
 						    $(".cont2").html('请输入用户名和密码')
 						    $('#mask_shadow').css({"display":"none"})
 						    
-						},2000);
+						},1500);
 			} else {
 				//console.log()
 				$http({
@@ -36,7 +36,7 @@ angular.module('my')
 						    $(".cont2").html('登录成功')
 						    $('#mask_shadow').css({"display":"none"})
 						    $state.go('index')
-						},2000);
+						},1500);
 					} else if(reqs.data.flag == 2) {
 						$('#popup').css({"opacity":"1","top":"40px"})
 						$(".cont2").html('用户名不存在')
@@ -46,7 +46,7 @@ angular.module('my')
 						    $(".cont2").html('用户名不存在')
 						    $('#mask_shadow').css({"display":"none"})
 						    
-						},2000);
+						},1500);
 					} else if(reqs.data.flag == 3) {
 						$('#popup').css({"opacity":"1","top":"40px"})
 						$(".cont2").html('密码错误')
@@ -56,7 +56,7 @@ angular.module('my')
 						    $(".cont2").html('密码错误')
 						    $('#mask_shadow').css({"display":"none"})
 						    
-						},2000);
+						},1500);
 					}
 
 				}, function() {

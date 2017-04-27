@@ -1,7 +1,22 @@
 <div class="cont1">	
-	<div class="tjxw tjxw2" style="margin-top:30px;height: 100vh;">
+	<div class="tjxw tjxw2" style="margin-top:30px;height: 100vh;" ng-controller="xwfl">
 		<div class="xwfl">
-			<div class="xwfl_top">这里是标题</div>
+			<div class="xwfl_top">这里是H5标题</div>
+			<table class="table table-bordered" style="margin: 15px;">
+				<thead>
+					<tr>
+						<td>发布者</td>
+						<td>发布时间</td>
+						<td>标题</td>
+						<td>图片</td>
+						<td>新闻条</td>
+						<td>内容</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
 			<div class="xwfl_bottom">
 				<ul class="xwfl_bottom_di">
 					<li>日期：<span>2017年4月24日</span></li>
@@ -10,7 +25,7 @@
 			</div>
 		</div>
 		<div class="xwfl">
-			<div class="xwfl_top">这里是标题</div>
+			<div class="xwfl_top">这里是CSS3标题</div>
 			<div class="xwfl_bottom">
 				<ul class="xwfl_bottom_di">
 					<li>日期：<span>2017年4月24日</span></li>
@@ -19,7 +34,7 @@
 			</div>
 		</div>
 		<div class="xwfl">
-			<div class="xwfl_top">这里是标题</div>
+			<div class="xwfl_top">这里是JAVASCRIPT标题</div>
 			<div class="xwfl_bottom">
 				<ul class="xwfl_bottom_di">
 					<li>日期：<span>2017年4月24日</span></li>
@@ -28,7 +43,7 @@
 			</div>
 		</div>
 		<div class="xwfl">
-			<div class="xwfl_top">这里是标题</div>
+			<div class="xwfl_top">这里是Jquery标题</div>
 			<div class="xwfl_bottom">
 				<ul class="xwfl_bottom_di">
 					<li>日期：<span>2017年4月24日</span></li>
@@ -40,3 +55,19 @@
 	</div>
 </div>
 <div ui-view></div>
+<script>
+	$.ajax({
+				type:"get",
+				url: "http://192.168.191.133:8005/item/sousuo",
+				data:{
+					base1:'JAVASCRIPT'
+				},
+				success: function(data){
+					console.log(data)
+					for(var i=0;i<data.length;i++){
+						$("tbody").append('<tr><td>'+data[i].base1+'</td><td>'+data[i].zuozhe+'</td><td>'+data[i].biaoti+'</td><td>'+data[i].neirong+'</td><td>'+data[i].regtime+'</td><td>'+data[i].images+'</td></tr>')
+					}
+				}
+				
+			});
+</script>

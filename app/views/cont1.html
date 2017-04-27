@@ -1,19 +1,21 @@
 <div class="cont1">	
 	<div class="tjxw" style="margin-top:30px;height: 100vh;">
 		<div class="panel-heading"></div>
-		<div class="panel-body">
-			<form action="">
+		<div class="panel-body" ng-controller="tjxw">
+			<form>
 				<header style="margin-bottom: 10px;"><b> 基本信息 </b></header>
 				<div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label">发布者：</label>
                   <div class="col-sm-10">
-                    <input type="text" name="username" value="" class="form-control" placeholder="请填写用户名">
+                    <input type="text" name="username" value="" class="form-control yz fbz" placeholder="请填写用户名" ng-model="name">
+                 	<span class="yz_name">X 请输入用户名</span>
                   </div>
                 </div>
                 <div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label">发布时间：</label>
                   <div class="col-sm-10">
-                    <input type="date" name="username" value="" class="form-control" placeholder="请填写用户名">
+                    <input type="date" name="fbsj" value="" class="form-control yz fbsj" placeholder="请填写用户名" ng-model="datee">
+                 	<span class="yz_name">X 请输入内容</span>
                   </div>
                 </div>
                 
@@ -21,41 +23,224 @@
 				<div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label">标题：</label>
                   <div class="col-sm-10">
-                    <input type="text" name="username" value="" class="form-control" placeholder="请输入标题">
+                    <input type="text" name="biaoti" value="" class="form-control yz xwbt" placeholder="请输入标题" ng-model="biaoti">
+                 	<span class="yz_name">X 请输入标题</span>
                   </div>
                 </div>
                 <div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label">图片：</label>
                   <div class="col-sm-10">
-                    <input type="file" name="username" value="" class="" placeholder="请填写用户名">
+                    <input type="file" name="tp" value="" class="file yz tp" placeholder="请填写用户名" ng-model="tup">
                   </div>
                 </div>
                 <div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label">新闻条：</label>
                   <div class="col-sm-10">
-                    <select name="position" class="form-control">
-                    	<option>H5</option>
-                    	<option>CSS3</option>
-                    	<option>JAVASCRIPT</option>
-                    	<option>Jquery</option>
+                    <select name="position" class="form-control yz xwt" ng-model="xwt">     
+                    	<option></option>
+                    	<option value="h5">H5</option>
+                    	<option value="CSS3">CSS3</option>
+                    	<option value="JAVASCRIPT">JAVASCRIPT</option>
+                    	<option value="Jquery">Jquery</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group q1" style="height: 90px;">
                   <label class="col-sm-2 col-sm-2 control-label">内容：</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" rows="3" placeholder="请输入内容" ></textarea>
+                    <textarea name="text" class="form-control yz xwnr" rows="3" placeholder="请输入内容" ng-model="cont"></textarea>
+                  	<span class="yz_name">X 请输入内容</span>
                   </div>
                 </div>
                 <div class="form-group q1">
                   <label class="col-sm-2 col-sm-2 control-label"></label>
                   <div class="col-sm-10">
-                   		<button class="btn btn-info">点击提交</button>
+                   		<button class="btn btn-info" id="tj" ng-click="tjxw()">点击提交</button>
                   </div>
                 </div>
 			</form>
 			
 		</div>
 	</div>
+	<div id="popup">
+			<div class="title">
+				<p data-title="Popup Text">提示信息</p>
+				<span>x</span>
+			</div>
+			<div class="cont2">登录成功</div>
+		</div>
+		<div id="mask_shadow"></div>
 </div>
 <div ui-view></div>
+<script>
+	
+	$('input[name=username]').blur(function(){
+			val = this.value;
+			if(val.length < 2 ){
+				$(this).next().show()
+				$(this).data({"s":0})
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('input[name=fbsj]').blur(function(){
+			val = this.value;
+			
+			if(val==''){
+				$(this).next().show()
+				$(this).data({"s":0})
+			}else if(val!=''){
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('select[name=position]').blur(function(){
+			val = this.value;
+//			alert(val)
+			if(val==''){
+				
+				$(this).data({"s":0})
+			}else if(val!=''){
+				$(this).data({"s":1})
+				
+			}
+		})
+		$('input[name=tp]').blur(function(){
+			val = this.value;
+			
+			if(val==''){
+				console.log('没有东西')
+				$(this).data({"s":0})
+			}else if(val!=''){
+				$(this).data({"s":1})
+				
+			}
+		})
+		$('input[name=biaoti]').blur(function(){
+			val = this.value;
+			if(val.length < 4 ){
+				$(this).data({"s":0})
+				$(this).next().show()
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('textarea[name=text]').blur(function(){
+			val = this.value;
+			if(val.length < 10 ){
+				$(this).data({"s":0})
+				$(this).next().show()
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		var files;
+		$('.file').change(function(element) {
+			console.log(this.files);
+			files = this.files[0];
+		})
+		$('.btn').click(function(){
+			
+			$('.yz').blur();
+			tot = 0;
+			$('.yz').each(function(){
+				tot+=$(this).data('s')
+				if(tot==6){
+					
+					var fd = new FormData();
+						fd.append("btn", files);
+						$.ajax({
+							type: "post",
+							url: "http://192.168.191.133:8005/item/images",
+							data: fd,
+							processData: false,
+							contentType: false,
+							success: function(e) {
+								console.log(e);
+								$.ajax({
+									type:'post',
+									url: "http://192.168.191.133:8005/item/add",
+									data:{
+										zuozhe:$('.fbz').val(),
+										regtime:$('.fbsj').val(),
+										biaoti:$('.xwbt').val(),
+										regtime:$('.fbsj').val(),
+										base1:$('.xwt').val(),
+										neirong:$('.xwnr').val(),
+										images:e.fname
+									},
+									success:function(){
+										$('#popup').css({"opacity":"1","top":"120px"})
+											 $(".cont2").html('添加成功！')					
+										setTimeout(function () {
+												  $("#popup").css({"opacity":"0","top":"50px"})
+												  $(".cont2").html('添加成功！')	  
+												  
+										},1500);
+									},error:function(){
+										alert(error)
+									}
+								}) 	
+							},
+							error: function() {
+								alert("失败")
+							}
+						});
+				}
+			})	
+			
+			if(tot!=6){
+				$('#popup').css({"opacity":"1","top":"120px"})
+					 $(".cont2").html('信息没填完整哦！')					
+				setTimeout(function () {
+						  $("#popup").css({"opacity":"0","top":"50px"})
+						  $(".cont2").html('信息没填完整哦！')	    
+				},1500);
+				return false
+			}
+		})
+		
+//		var files;
+//		$('.file').change(function(element) {
+//			console.log(this.files);
+//			files = this.files[0];
+//		})
+//		$('#tj').click(function() {
+//			var fd = new FormData();
+//			fd.append("btn", files);
+//			$.ajax({
+//				type: "post",
+//				url: "http://192.168.191.133:8005/item/images",
+//				data: fd,
+//				processData: false,
+//				contentType: false,
+//				success: function(e) {
+//					console.log(e);
+//					$.ajax({
+//						type:'post',
+//						url: "http://192.168.191.133:8005/item/add",
+//						data:{
+//							zuozhe:$('.fbz').val(),
+//							regtime:$('.fbsj').val(),
+//							biaoti:$('.xwbt').val(),
+//							regtime:$('.fbsj').val(),
+//							base1:$('.xwt').val(),
+//							neirong:$('.xwnr').val(),
+//							images:e.fname
+//						},
+//						success:function(){
+//							
+//						},error:function(){
+//							alert(error)
+//						}
+//					}) 	
+//				},
+//				error: function() {
+//					alert("失败")
+//				}
+//			});
+//		})
+</script>
