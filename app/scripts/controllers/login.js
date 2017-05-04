@@ -19,7 +19,7 @@ angular.module('my')
 				//console.log()
 				$http({
 					method: "POST",
-					url: "http://192.168.191.133:8005/item/login",
+					url: "http://192.168.191.121:8005/item/login",
 					data: "username=" + $scope.username + "&password=" + $scope.password,
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'

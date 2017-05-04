@@ -62,10 +62,8 @@ angular.module('my')
 .controller("xwfl",["$scope","$timeout","$http", function($scope,$timeout,$http) {
 			$http({
 		     	method:'get',
-		     	url: "http://192.168.191.133:8005/item/list",
-		     	data:{
-		     		base1:'h5'
-		     	},
+		     	url: "http://192.168.113.230:8005/item/list",
+		     	
 		     	processData: false,
 				contentType: false,
 		     	headers: {
@@ -73,10 +71,11 @@ angular.module('my')
 				}
 		     		
 		     }).then(function(e){
-				$scope.data=e;
+				$scope.data=e.data;
 				console.log(e)
 		     },function(){
 		     	alert('error')
 		     })
-	
+		     
+		   
 }])

@@ -22,7 +22,7 @@ angular.module("my")
 			//console.log(username)
 			$http({
 				method:'post',
-				url:"http://192.168.191.133:8005/item/zhuce",
+				url:"http://192.168.191.121:8005/item/zhuce",
 //				data:{
 //					username:$scope.user,
 //					password:$scope.pwd,

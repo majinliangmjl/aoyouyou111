@@ -1,73 +1,199 @@
+<style type="text/css">
+	.nav li{
+		list-style: none;
+		float: left;
+		margin-left: 10px;
+		
+	}
+	#box div{
+		width: 200px;
+		height: 100px;
+		border: 1px solid #ccc;
+	}
+</style>
 <div class="cont1">	
 	<div class="tjxw tjxw2" style="margin-top:30px;height: 100vh;" ng-controller="xwfl">
+		<div class="form-group q1">
+                 
+           <div class="col-sm-5">
+                <input type="text" name="username"  value="" class="form-control yz fbz pull-left sousuo" placeholder="输入你要搜索的内容" ng-model="search">
+                
+           </div><button class="btn btn-info pull-left btn-xm sousuoan" id="btn">搜索</button>
+        </div>
 		<div class="xwfl">
-			<div class="xwfl_top">这里是H5标题</div>
-			<table class="table table-bordered" style="margin: 15px;">
+			
+			<table class="table table-bordered" style="margin: 15px 0 15px 0;">
 				<thead>
 					<tr>
-						<td>发布者</td>
-						<td>发布时间</td>
-						<td>标题</td>
-						<td>图片</td>
+						<td>标题</td>			
 						<td>新闻条</td>
-						<td>内容</td>
+						<td>发布者</td>
+						<td>手机号</td>						
+						<td>删除</td>
 					</tr>
 				</thead>
-				<tbody>
-					
+				<tbody class="h5">
+					<!--<tr ng-repeat='i in data | filter:search'>
+						<td>{{i.biaoti}}</td>
+						<td>{{i.base1}}</td>
+						<td>{{i.zuozhe}}</td>
+						<td>{{i.regtime}}</td>
+						<td><button class="btn btn-info btn-sm" ng-click="delete($index)">删除</button></td>
+					</tr>-->
 				</tbody>
 			</table>
-			<div class="xwfl_bottom">
-				<ul class="xwfl_bottom_di">
-					<li>日期：<span>2017年4月24日</span></li>
-					<li>发布人：<span>齐龙龙</span></li>
-				</ul>
-			</div>
+			
+			<div class="h6"></div>
 		</div>
-		<div class="xwfl">
+		<ul class="nav">
+			<li id="s" class="btn btn-info">上一页</li>
+			<li id="x" class="btn btn-info">下一页</li>
+		</ul>
+		<!--<div class="xwfl">
 			<div class="xwfl_top">这里是CSS3标题</div>
-			<div class="xwfl_bottom">
-				<ul class="xwfl_bottom_di">
-					<li>日期：<span>2017年4月24日</span></li>
-					<li>发布人：<span>齐龙龙</span></li>
-				</ul>
-			</div>
+			
 		</div>
 		<div class="xwfl">
 			<div class="xwfl_top">这里是JAVASCRIPT标题</div>
-			<div class="xwfl_bottom">
-				<ul class="xwfl_bottom_di">
-					<li>日期：<span>2017年4月24日</span></li>
-					<li>发布人：<span>齐龙龙</span></li>
-				</ul>
-			</div>
+			
 		</div>
 		<div class="xwfl">
 			<div class="xwfl_top">这里是Jquery标题</div>
-			<div class="xwfl_bottom">
-				<ul class="xwfl_bottom_di">
-					<li>日期：<span>2017年4月24日</span></li>
-					<li>发布人：<span>齐龙龙</span></li>
-				</ul>
-			</div>
-		</div>
+			
+		</div>-->
 	</div>
 	</div>
 </div>
 <div ui-view></div>
 <script>
-	$.ajax({
-				type:"get",
-				url: "http://192.168.191.133:8005/item/sousuo",
+	     
+//	     		$.ajax({
+//					type:"get",
+//				url: "http://192.168.113.230:8005/item/sousuo",
+//				data:{
+//					base1:'JAVASCRIPT'
+//				},
+//				success: function(data){
+//					console.log(data)
+//					for(var i=0;i<data.length;i++){
+//						$(".h5").append('<tr><td>'+data[i].biaoti+'</td><td>'+data[i].base1+'</td><td>'+data[i].zuozhe+'</td><td>'+data[i].regtime+'</td><td>'+'<a onclick=fn('+data[i].uid+')>详情</a>'+'</td></tr>')
+//					}
+//					
+//				}
+//				
+//			});
+	     
+		
+			
+//			function fn(e){
+//				alert(e)
+//				$.ajax({
+//					type:"get",
+//					url:'http://localhost:8007/delete/delet',
+//					data:{id:e},
+//					success: function(e) {					    
+//						if(e.flag == 1) {
+//							alert('删除成功')
+//						}else{
+//								alert('失败')
+//							}
+//						},
+//					error:function(){
+//						alert('error')
+//					}
+//				});
+//			}
+
+$("#s").css("display","block")	
+		var m  = 1
+		$("#x").click(function(){
+//			$("#s").css("display","block")
+			m++
+//			if(m==ys){
+//				$(this).css("display","none")
+//			}
+			a()
+		})
+		$("#s").click(function(){
+//			$("#x").css("display","block")			
+			m--
+			if(m<=0){
+				m=0
+				alert("这已经是第一页了！")
+			}
+			a()
+		})
+			a()
+		function a(){
+				$.ajax({
+				type: "post",
+				url: "http://192.168.113.230:8005/item/st",
 				data:{
-					base1:'JAVASCRIPT'
+					pagenum:m
 				},
-				success: function(data){
-					console.log(data)
-					for(var i=0;i<data.length;i++){
-						$("tbody").append('<tr><td>'+data[i].base1+'</td><td>'+data[i].zuozhe+'</td><td>'+data[i].biaoti+'</td><td>'+data[i].neirong+'</td><td>'+data[i].regtime+'</td><td>'+data[i].images+'</td></tr>')
+				success: function(data) {
+					console.log(data);
+					var ys = data.totalPage;
+					console.log(ys)
+					if(m==ys){
+						$("#x").css("display","none")
+					}else{
+						$("#x").css("display","block")
 					}
+					$(".h5").empty();
+					for(var i=0;i<data.list.length;i++){
+						$(".h5").append('<tr><td>'+data.list[i].biaoti+'</td><td>'+data.list[i].base1+'</td><td>'+data.list[i].zuozhe+'</td><td>'+data.list[i].regtime+'</td><td>'+'<a onclick=fn('+data.list[i].uid+')>删除</a>'+'</td></tr>')
+					}
+					
 				}
-				
 			});
+		}
+		function fn(data){
+				alert(data)
+				$.ajax({
+					type:"get",
+					url: "http://192.168.113.230:8005/item/schu?uid="+data,
+					
+					success: function(e) {					    
+						if(e.flag == 1) {
+							alert('删除成功')
+//							location.reload()
+						}else{
+								alert('失败')
+						}
+					},
+					error:function(){
+						alert('error')
+					}
+				});
+		}
+		
+		
+		$('#btn').click(function(){
+				
+					$.ajax({
+						type:"get",
+						url: "http://192.168.113.230:8005/item/sousuo",
+						data:{
+							u:$('.sousuo').val()
+						},
+						success:function(data){
+							$('.sousuo').val('')
+							console.log(data)
+							var html =''
+							$(".h5").empty()
+							for(var i=0;i<data.length;i++){
+								html+='<tr><td>'+data[i].biaoti+'</td><td>'+data[i].base1+'</td><td>'+data[i].zuozhe+'</td><td>'+data[i].regtime+'</td><td>'+'<a onclick=fn('+data[i].uid+')>删除</a>'+'</td></tr>'
+							}
+		//					var str = e[1].name
+		//					$('p').html(str)
+							$('.h5').append(html)
+						},
+						error:function(){
+							alert(error)
+						}
+					});
+				
+				
+			})
 </script>
