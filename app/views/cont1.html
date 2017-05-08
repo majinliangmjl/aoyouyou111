@@ -1,4 +1,4 @@
-<div class="cont1">	
+<div class="cont1" ng-controller="xzdl">	
 	<div class="tjxw" style="margin-top:30px;height: 100vh;">
 		<div class="panel-heading"></div>
 		<div class="panel-body" ng-controller="tjxw">
@@ -42,6 +42,7 @@
                     	<option value="CSS3">CSS3</option>
                     	<option value="JAVASCRIPT">JAVASCRIPT</option>
                     	<option value="Jquery">Jquery</option>
+                    	<option value="angular">angular</option>
                     </select>
                   </div>
                 </div>
@@ -154,7 +155,7 @@
 						fd.append("btn", files);
 						$.ajax({
 							type: "post",
-							url: "http://192.168.113.230:8005/item/images",
+							url: "http://192.168.191.111:8005/item/images",
 							data: fd,
 							processData: false,
 							contentType: false,
@@ -162,7 +163,7 @@
 								console.log(e);
 								$.ajax({
 									type:'post',
-									url: "http://192.168.113.230:8005/item/add",
+									url: "http://192.168.191.111:8005/item/add",
 									data:{
 										zuozhe:$('.fbz').val(),
 										regtime:$('.fbsj').val(),

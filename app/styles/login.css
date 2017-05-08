@@ -1,4 +1,6 @@
-
+input{
+	outline: none;text-indent: 5px;
+}
 .yhs_denglu{
 	margin: auto;
     width: 350px;

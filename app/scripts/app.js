@@ -24,6 +24,11 @@ angular.module('my', ['ui.router'])
         //注册
         url:'/index'
         ,templateUrl:'views/index.html'
+     })
+	.state("xq",{
+        //详情
+        url:'/xq'
+        ,templateUrl:'views/xq.html'
       })
 	.state('index.cont1', {
 			url: "/index.cont1",
@@ -33,14 +38,15 @@ angular.module('my', ['ui.router'])
 			url: "/index.cont2",
 			templateUrl: "views/cont2.html"
 	})
-	.state('index.y_glxw', {
-			url: "/index.y_glxw",
-			templateUrl: "views/y_glxw.html"
+	.state('index.xq', {
+			url: "/index.xq",
+			templateUrl: "views/xq2.html"
 	})
 	.state('index.y_xwzx', {
 			url: "/index.y_xwzx",
 			templateUrl: "views/y_xwzx.html"
 	})
+
 	$urlRouterProvider.otherwise("/login")
 
 }])

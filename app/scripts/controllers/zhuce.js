@@ -22,7 +22,7 @@ angular.module("my")
 			//console.log(username)
 			$http({
 				method:'post',
-				url:"http://192.168.191.121:8005/item/zhuce",
+				url:"http://192.168.191.111:8005/item/zhuce",
 //				data:{
 //					username:$scope.user,
 //					password:$scope.pwd,
@@ -32,7 +32,7 @@ angular.module("my")
 				data:"username="+$scope.user +"&password="+$scope.pwd +"&phone=" +$scope.phone +"&nicheng=" +$scope.nc,
 				headers:{'Content-Type': 'application/x-www-form-urlencoded'}
 			}).then(function(reqs){
-				
+				console.log(reqs)
 				if(reqs.data.flag==1){
 					//alert("注册成功，确定跳转到登陆页面")
 					localStorage.setItem('yhm',$('.zcname').val())

@@ -1,12 +1,12 @@
-<div>
+<div ng-controller="xzdl">
 	<div class="ql_head">
 		<div class="ql_head_left1 glyphicon glyphicon-home"></div>
 		<div class="ql_head_left">
 			新闻系统
 		</div>
-		<div class="ql_head_right">
+		<div class="ql_head_right" ng-controller="tc">
 			<ul>
-				<li ui-sref='login'>退出登录</li>
+				<li ng-click="tc()">退出登录</li>
 				
 			</ul>
 		</div>
@@ -31,18 +31,13 @@
 						</li>
 					</ul>
 				</li>
+				
 				<li>
-					<a href="javascript:void(0)" class="inactive">系统审核</a>
-					<ul style="display: none">
-						<li>
-							<div class="glyphicon glyphicon-share-alt tb"></div>
-							<a href="javascript:void(0)" class=" active" ui-sref='index.y_glxw'>管理新闻</a>
-						</li>
-						<li class="last">
-							<div class="glyphicon glyphicon-cog tb"></div>
-							<a href="javascript:void(0)" class=" active"ui-sref='index.y_xwzx'>新闻中心</a>
-						</li>
-					</ul>
+					<p href="javascript:void(0)" ui-sref='index.y_xwzx'>新闻中心</p>
+				</li>
+				
+				<li style="display: none;">
+					<p href="javascript:void(0)" ui-sref='index.xq'>详情</p>
 				</li>
 				
 			</ul>

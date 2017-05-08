@@ -3,6 +3,9 @@ angular.module('my')
 		$scope.username = "";
 		$scope.password = "";
 		$scope.username = localStorage.getItem('yhm')
+		if(localStorage.aa!=4){
+   		$state.go('login')
+  	}
 		$scope.denglu = function() {
 			if($scope.username == "" || $scope.password == "") {
 //				alert("用户名和密码不能为空")
@@ -19,7 +22,7 @@ angular.module('my')
 				//console.log()
 				$http({
 					method: "POST",
-					url: "http://192.168.191.121:8005/item/login",
+					url: "http://192.168.191.111:8005/item/login",
 					data: "username=" + $scope.username + "&password=" + $scope.password,
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
@@ -31,6 +34,7 @@ angular.module('my')
 						$('#popup').css({"opacity":"1","top":"40px"})
 						$(".cont2").html('登录成功')
 						$('#mask_shadow').css({"display":"block"})
+						localStorage.aa=4;
 						setTimeout(function () {
 						    $("#popup").css({"opacity":"0","top":"20px"})
 						    $(".cont2").html('登录成功')

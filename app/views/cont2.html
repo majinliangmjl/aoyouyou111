@@ -1,4 +1,9 @@
 <style type="text/css">
+	.nav{
+		width: 170px;
+		height: auto;
+		
+	}
 	.nav li{
 		list-style: none;
 		float: left;
@@ -11,7 +16,7 @@
 		border: 1px solid #ccc;
 	}
 </style>
-<div class="cont1">	
+<div class="cont1" ng-controller="xzdl">	
 	<div class="tjxw tjxw2" style="margin-top:30px;height: 100vh;" ng-controller="xwfl">
 		<div class="form-group q1">
                  
@@ -45,7 +50,7 @@
 			
 			<div class="h6"></div>
 		</div>
-		<ul class="nav">
+		<ul class="nav fenye">
 			<li id="s" class="btn btn-info">上一页</li>
 			<li id="x" class="btn btn-info">下一页</li>
 		</ul>
@@ -69,7 +74,7 @@
 	     
 //	     		$.ajax({
 //					type:"get",
-//				url: "http://192.168.113.230:8005/item/sousuo",
+//				url: "http://192.168.191.111:8005/item/sousuo",
 //				data:{
 //					base1:'JAVASCRIPT'
 //				},
@@ -127,7 +132,7 @@ $("#s").css("display","block")
 		function a(){
 				$.ajax({
 				type: "post",
-				url: "http://192.168.113.230:8005/item/st",
+				url: "http://192.168.191.111:8005/item/st",
 				data:{
 					pagenum:m
 				},
@@ -152,7 +157,7 @@ $("#s").css("display","block")
 				alert(data)
 				$.ajax({
 					type:"get",
-					url: "http://192.168.113.230:8005/item/schu?uid="+data,
+					url: "http://192.168.191.111:8005/item/schu?uid="+data,
 					
 					success: function(e) {					    
 						if(e.flag == 1) {
@@ -173,7 +178,7 @@ $("#s").css("display","block")
 				
 					$.ajax({
 						type:"get",
-						url: "http://192.168.113.230:8005/item/sousuo",
+						url: "http://192.168.191.111:8005/item/sousuo",
 						data:{
 							u:$('.sousuo').val()
 						},

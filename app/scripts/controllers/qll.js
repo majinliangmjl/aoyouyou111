@@ -8,6 +8,18 @@ angular.module('my')
 	}
 	timer();
 }])
+.controller("tc",["$scope","$timeout","$state", function($scope,$timeout,$state) {
+	$scope.tc=function(){
+		localStorage.clear();
+		$state.go('login')
+	}
+}])
+
+ .controller("xzdl",["$scope","$timeout","$state", function($scope,$timeout,$state) {
+	if(localStorage.aa!=4){
+   		$state.go('login')
+	}
+}])
 .controller("tjxw",["$scope","$timeout","$http", function($scope,$timeout,$http) {
 //			var files;
 //			$('.file').change(function(element) {
@@ -62,7 +74,7 @@ angular.module('my')
 .controller("xwfl",["$scope","$timeout","$http", function($scope,$timeout,$http) {
 			$http({
 		     	method:'get',
-		     	url: "http://192.168.113.230:8005/item/list",
+		     	url: "http://192.168.191.111:8005/item/list",
 		     	
 		     	processData: false,
 				contentType: false,
@@ -77,5 +89,7 @@ angular.module('my')
 		     	alert('error')
 		     })
 		     
-		   
+		   if(localStorage.aa!=4){
+   		$state.go('login')
+  	}
 }])
